@@ -1,0 +1,11 @@
+<launch>
+
+  <group ns="turtlesim">
+    <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+  </group>
+
+  <group ns="turtlecintrol">
+    <node pkg="beginner_tutorials" name="sim" type="turtle"/>
+  </group>
+
+</launch>
