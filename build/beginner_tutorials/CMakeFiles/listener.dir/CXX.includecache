@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/kforysze/catkin_ws/src/beginner_tutorials/src/listener.cpp
+/home/kforysze/ANRO/src/beginner_tutorials/src/listener.cpp
 ros/ros.h
-/home/kforysze/catkin_ws/src/beginner_tutorials/src/ros/ros.h
+/home/kforysze/ANRO/src/beginner_tutorials/src/ros/ros.h
 std_msgs/String.h
-/home/kforysze/catkin_ws/src/beginner_tutorials/src/std_msgs/String.h
+/home/kforysze/ANRO/src/beginner_tutorials/src/std_msgs/String.h
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h

@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/beginner_tutorials_generate_messages_py"
-  "/home/kforysze/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tutorials/msg/_Num.py"
-  "/home/kforysze/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tutorials/srv/_AddTwoInts.py"
-  "/home/kforysze/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tutorials/msg/__init__.py"
-  "/home/kforysze/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tutorials/srv/__init__.py"
+  "/home/kforysze/ANRO/devel/lib/python2.7/dist-packages/beginner_tutorials/msg/_Num.py"
+  "/home/kforysze/ANRO/devel/lib/python2.7/dist-packages/beginner_tutorials/srv/_AddTwoInts.py"
+  "/home/kforysze/ANRO/devel/lib/python2.7/dist-packages/beginner_tutorials/msg/__init__.py"
+  "/home/kforysze/ANRO/devel/lib/python2.7/dist-packages/beginner_tutorials/srv/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

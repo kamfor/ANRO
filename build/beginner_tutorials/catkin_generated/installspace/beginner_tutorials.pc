@@ -1,8 +1,8 @@
-prefix=/home/kforysze/catkin_ws/install
+prefix=/home/kforysze/ANRO/install
 
 Name: beginner_tutorials
 Description: Description of beginner_tutorials
 Version: 0.0.0
-Cflags: -I/home/kforysze/catkin_ws/install/include
-Libs: -L/home/kforysze/catkin_ws/install/lib 
+Cflags: -I/home/kforysze/ANRO/install/include
+Libs: -L/home/kforysze/ANRO/install/lib 
 Requires: 

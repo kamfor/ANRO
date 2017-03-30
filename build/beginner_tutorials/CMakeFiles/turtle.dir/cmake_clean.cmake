@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/turtle.dir/src/turtle.cpp.o"
-  "/home/kforysze/catkin_ws/devel/lib/beginner_tutorials/turtle.pdb"
-  "/home/kforysze/catkin_ws/devel/lib/beginner_tutorials/turtle"
+  "/home/kforysze/ANRO/devel/lib/beginner_tutorials/turtle.pdb"
+  "/home/kforysze/ANRO/devel/lib/beginner_tutorials/turtle"
 )
 
 # Per-language clean rules from dependency scanning.
