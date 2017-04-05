@@ -1,2 +1,0 @@
-beginner_tutorials
--DCATKIN_DEVEL_PREFIX=/home/kforysze/ANRO/devel -DCMAKE_INSTALL_PREFIX=/home/kforysze/ANRO/install -G Unix Makefiles
