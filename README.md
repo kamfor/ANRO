@@ -3,4 +3,4 @@
   
   <br/>Wiki poszczególnych labolatoriów 
 
-* [Lab1 - wprowadzenie do ROS ](https://github.com/kamfor/ANRO/wiki/Laboratorium_1)
+* [Lab1 - wprowadzenie do ROS ](https://github.com/kamfor/ANRO/wiki/Labolatorium_1)
