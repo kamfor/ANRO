@@ -35,6 +35,7 @@ private:
   ros::NodeHandle nh_;
   //! We will be publishing to the "/base_controller/command" topic to issue commands
   ros::Publisher cmd_vel_pub_;
+  bool loop; 
 
 public:
   //! ROS node initialization
@@ -51,18 +52,18 @@ public:
     std::cout << "Type a command and then press enter.  "
       "Use 'w' to move forward, 'a' to turn left, "
       "'d' to turn right, 's' to turn back,";
-      "'q' to exit.\n";
+      "'p' to exit.\n";
       
     //we will be sending commands of type "twist"
     geometry_msgs::Twist base_cmd;
 
+    loop  = true; 
     char c;
     base_cmd.linear.x = base_cmd.linear.y = base_cmd.angular.z = 0;
-    while(nh_.ok()){
+    while(nh_.ok()&&loop){
 
       c = getch();
-      
-      
+    
       switch (c){
 		case 'w':
 			base_cmd.linear.x = 1.0;
@@ -80,6 +81,9 @@ public:
 			base_cmd.angular.z = -0.75;
 			base_cmd.linear.x = 0;  
 		break;
+		case 'p':
+			loop  = false; 
+		break; 
 		default:
 			base_cmd.linear.x = base_cmd.linear.y = base_cmd.angular.z = 0;
 		break; 
