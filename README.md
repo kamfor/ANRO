@@ -3,5 +3,4 @@
   
   <br/>Wiki poszczególnych labolatoriów 
 
-* [Lab1 - wprowadzenie do ROS ](https://github.com/kamfor/ANRO/wiki/Laboratorium-1.)
-* [Lab2 - modelowanie i wizualizacja manipulatora ](https://github.com/kamfor/ANRO/wiki/Laboratorium-2.)
+* [Lab1 - wprowadzenie do ROS ](https://github.com/kamfor/ANRO/wiki/Laboratorium_1)
