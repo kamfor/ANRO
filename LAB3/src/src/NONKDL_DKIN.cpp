@@ -3,7 +3,9 @@
 #include <sensor_msgs/JointState.h>
 #include <visualization_msgs/Marker.h>
 
-float finalX, finalY, finalZ;
+double finalX, finalY, finalZ;
+double d1,d2,d3;
+
 ros::Publisher pub; 
 
 void jointCallback(const sensor_msgs::JointState & msg)
@@ -14,13 +16,10 @@ void jointCallback(const sensor_msgs::JointState & msg)
 	ros::NodeHandle n;
 	
 	geometry_msgs::PoseStamped poseStamped;
-
-	
 		
 	poseStamped.header.frame_id="base_link";
 	poseStamped.header.stamp = ros::Time::now();
 	
-
 	finalX = msg.position[0] ;
 	finalY = msg.position[1] ;
 	finalZ = msg.position[2] ;
@@ -44,6 +43,10 @@ int main(int argc, char **argv)
 	ros::Rate loop_rate(30);
 	pub = s.advertise<geometry_msgs::PoseStamped>("nonkdl_pose",1);
 	ros::Subscriber sub=s.subscribe("joint_states", 100, jointCallback);
+
+    	s.param<double>("d1",d1,3);
+    	s.param<double>("d2",d2,3);
+	s.param<double>("d3",d3,3);
 	
 	ros::spin();
 
