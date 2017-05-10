@@ -11,6 +11,7 @@ using namespace std;
 using namespace KDL;
 
 float t1, t2, t3;
+double d1,d2,d3;
 ros::Publisher pub; 
 
 void jointCallback(const sensor_msgs::JointState & msg)
@@ -24,15 +25,13 @@ void jointCallback(const sensor_msgs::JointState & msg)
 
 //łańcuch KDL
 	KDL::Chain chain;
-	t1 = msg.position[0] ;
-	t2 = msg.position[1] ;
-	t3 = msg.position[2] ;	
+	t1 = msg.position[0];
+	t2 = msg.position[1];
+	t3 = msg.position[2];	
 	
-	chain.addSegment(Segment(Joint(Joint::None),Frame(Frame::DH(0,0,0,0))));
-	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(0,0,1.0,0))));
-	chain.addSegment(Segment(Joint(Joint::None),Frame(Frame::DH(0,-M_PI/2.0,0,0))));
-	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(1,0,0,-M_PI/2.0))));
-	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(0,0,0,0))));
+	chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::TransZ),KDL::Frame::DH(0, 0, 0, 0)));
+	chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::TransY),KDL::Frame::DH(0, PI/2, 0, PI/2)));
+	chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::TransZ),KDL::Frame::DH(0, PI/2, 0, PI/2)));
 
 //solver
 	ChainFkSolverPos_recursive solver(chain);
@@ -44,6 +43,9 @@ void jointCallback(const sensor_msgs::JointState & msg)
 	q(2)=t3;
        	
 	solver.JntToCart(q,F_results);
+
+	poseStamped.header.frame_id="base_link";
+	poseStamped.header.stamp = ros::Time::now();
 
 	poseStamped.pose.position.x=F_results.p.data[0];
 	poseStamped.pose.position.y=F_results.p.data[1];
@@ -57,9 +59,7 @@ void jointCallback(const sensor_msgs::JointState & msg)
 	poseStamped.pose.orientation.z=z;
 	poseStamped.pose.orientation.w=w; 
 	pub.publish(poseStamped);
-		
-	poseStamped.header.frame_id="base_link";
-	poseStamped.header.stamp = ros::Time::now();
+
 }
 
 
@@ -71,6 +71,10 @@ int main(int argc, char **argv)
 
 			pub = s.advertise<geometry_msgs::PoseStamped>("kdl_pose",1);
 	ros::Subscriber sub = s.subscribe("joint_states", 100, jointCallback);
+
+	s.param<double>("d1",d1,3);
+    	s.param<double>("d2",d2,3);
+	s.param<double>("d3",d3,3);
 	 
 	ros::spin();
 
