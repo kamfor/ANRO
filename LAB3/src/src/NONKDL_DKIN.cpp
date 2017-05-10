@@ -25,9 +25,9 @@ void jointCallback(const sensor_msgs::JointState & msg)
 	finalY = msg.position[1] ;
 	finalZ = msg.position[2] ;
 	
-	poseStamped.pose.position.x=finalZ-2;
-	poseStamped.pose.position.y=finalY-2;
-	poseStamped.pose.position.z=2-finalX;
+	poseStamped.pose.position.x=finalZ;
+	poseStamped.pose.position.y=finalY;
+	poseStamped.pose.position.z=finalX;
 
 	poseStamped.pose.orientation.x=0;
 	poseStamped.pose.orientation.y=0;

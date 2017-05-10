@@ -1,8 +1,8 @@
-prefix=/home/kforysze/ANRO/LAB3/install
+prefix=/home/kamil/ANRO/LAB3/install
 
 Name: lab3
 Description: Description of lab3
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/kforysze/ANRO/LAB3/install/lib 
+Libs: -L/home/kamil/ANRO/LAB3/install/lib 
 Requires: 

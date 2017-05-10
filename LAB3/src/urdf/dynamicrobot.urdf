@@ -1,27 +1,27 @@
 <robot name="kartezjan">
 	<link name="base_link">
 		<visual>
-		<origin xyz="0 0 1" rpy="0 0 0" />
+		<origin xyz="0 0 1.5" rpy="0 0 0" />
 			<geometry>
-				<cylinder length="2" radius="0.1"/>
+				<cylinder length="3" radius="0.1"/>
 			</geometry>
 		</visual>
 	</link>
 
 	<link name="link1">
 		<visual>
-		<origin xyz="0 0 1" rpy="0 0 0" />
+		<origin xyz="0 0 1.5" rpy="0 0 0" />
 			<geometry>
-				<cylinder length="2" radius="0.1"/>
+				<cylinder length="3" radius="0.1"/>
 			</geometry>
 		</visual>
 	</link>
 
 	<link name="link2">
 		<visual>
-		<origin xyz="0 0 1" rpy="0 0 0" />
+		<origin xyz="0 0 1.5" rpy="0 0 0" />
 			<geometry>
-				<cylinder length="2" radius="0.1"/>
+				<cylinder length="3" radius="0.1"/>
 			</geometry>
 		</visual>
 	</link>
@@ -38,23 +38,23 @@
 		<parent link="base_link"/>
 		<child link="link1"/>
 		<axis xyz="1 0 0" rpy="0 0 0" />
-		<origin xyz="0 0 2" rpy="1.5708 1.5708 0 " />
-		<limit effort="30" velocity="1.0" lower="0" upper="2" />
+		<origin xyz="0 0 0" rpy="-1.5708 -1.5708 0 " />
+		<limit effort="30" velocity="1.0" lower="0" upper="3" />
 	</joint>
 
 	<joint name="joint2" type="prismatic">
 		<parent link="link1"/>
 		<child link="link2"/>
 		<axis xyz="1 0 0" rpy="0 0 0" />
-		<origin xyz="0 0 2" rpy="1.5708 1.5708 0 " />
-		<limit effort="30" velocity="1.0" lower="0" upper="2" />
+		<origin xyz="0 0 0" rpy="-1.5708 -1.5708 0 " />
+		<limit effort="30" velocity="1.0" lower="0" upper="3" />
 	</joint>
 
 	<joint name="joint3" type="prismatic">
 		<parent link="link2"/>
 		<child link="link3"/>
-		<axis xyz="0 0 -1" rpy="0 0 0" />
-		<origin xyz="0 0 2" rpy="0 0 0" />
-		<limit effort="30" velocity="1.0" lower="0" upper="2" />
+		<axis xyz="0 0 1" rpy="0 0 0" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<limit effort="30" velocity="1.0" lower="0" upper="3" />
 	</joint>
 </robot>

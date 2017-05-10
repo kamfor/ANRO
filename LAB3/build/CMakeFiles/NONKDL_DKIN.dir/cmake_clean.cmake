@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/NONKDL_DKIN.dir/src/NONKDL_DKIN.cpp.o"
-  "/home/kforysze/ANRO/LAB3/devel/lib/lab3/NONKDL_DKIN.pdb"
-  "/home/kforysze/ANRO/LAB3/devel/lib/lab3/NONKDL_DKIN"
+  "/home/kamil/ANRO/LAB3/devel/lib/lab3/NONKDL_DKIN.pdb"
+  "/home/kamil/ANRO/LAB3/devel/lib/lab3/NONKDL_DKIN"
 )
 
 # Per-language clean rules from dependency scanning.

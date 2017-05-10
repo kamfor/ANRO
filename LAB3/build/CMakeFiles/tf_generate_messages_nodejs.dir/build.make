@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kforysze/ANRO/LAB3/src
+CMAKE_SOURCE_DIR = /home/kamil/ANRO/LAB3/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kforysze/ANRO/LAB3/build
+CMAKE_BINARY_DIR = /home/kamil/ANRO/LAB3/build
 
 # Utility rule file for tf_generate_messages_nodejs.
 
@@ -67,6 +67,6 @@ CMakeFiles/tf_generate_messages_nodejs.dir/clean:
 .PHONY : CMakeFiles/tf_generate_messages_nodejs.dir/clean
 
 CMakeFiles/tf_generate_messages_nodejs.dir/depend:
-	cd /home/kforysze/ANRO/LAB3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kforysze/ANRO/LAB3/src /home/kforysze/ANRO/LAB3/src /home/kforysze/ANRO/LAB3/build /home/kforysze/ANRO/LAB3/build /home/kforysze/ANRO/LAB3/build/CMakeFiles/tf_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kamil/ANRO/LAB3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kamil/ANRO/LAB3/src /home/kamil/ANRO/LAB3/src /home/kamil/ANRO/LAB3/build /home/kamil/ANRO/LAB3/build /home/kamil/ANRO/LAB3/build/CMakeFiles/tf_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tf_generate_messages_nodejs.dir/depend
 

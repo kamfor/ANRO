@@ -7,9 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/kforysze/ANRO/LAB3/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/kforysze/ANRO/LAB3/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/kforysze/ANRO/LAB3/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD="/home/kforysze/ANRO/LAB3/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/kforysze/ANRO/LAB3/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/kforysze/ANRO/LAB3/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/kamil/ANRO/LAB3/devel:$CMAKE_PREFIX_PATH"
+export PWD="/home/kamil/ANRO/LAB3/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/kamil/ANRO/LAB3/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/kamil/ANRO/LAB3/src:$ROS_PACKAGE_PATH"

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/kforysze/ANRO/LAB3/src/src/NONKDL_DKIN.cpp
+/home/kamil/ANRO/LAB3/src/src/NONKDL_DKIN.cpp
 ros/ros.h
 -
 geometry_msgs/PoseStamped.h

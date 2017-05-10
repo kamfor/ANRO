@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kforysze/ANRO/LAB3/src/src/NONKDL_DKIN.cpp" "/home/kforysze/ANRO/LAB3/build/CMakeFiles/NONKDL_DKIN.dir/src/NONKDL_DKIN.cpp.o"
+  "/home/kamil/ANRO/LAB3/src/src/NONKDL_DKIN.cpp" "/home/kamil/ANRO/LAB3/build/CMakeFiles/NONKDL_DKIN.dir/src/NONKDL_DKIN.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,7 +19,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"
-  "/home/kforysze/ANRO/LAB3/src/include"
+  "/home/kamil/ANRO/LAB3/src/include"
   )
 
 # Targets to which this target links.

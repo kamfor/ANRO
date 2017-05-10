@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kforysze/ANRO/LAB3/src
+CMAKE_SOURCE_DIR = /home/kamil/ANRO/LAB3/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kforysze/ANRO/LAB3/build
+CMAKE_BINARY_DIR = /home/kamil/ANRO/LAB3/build
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/kforysze/ANRO/LAB3/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/kforysze/ANRO/LAB3/build/test_results
+	/usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/kamil/ANRO/LAB3/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/kforysze/ANRO/LAB3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kforysze/ANRO/LAB3/src /home/kforysze/ANRO/LAB3/src /home/kforysze/ANRO/LAB3/build /home/kforysze/ANRO/LAB3/build /home/kforysze/ANRO/LAB3/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kamil/ANRO/LAB3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kamil/ANRO/LAB3/src /home/kamil/ANRO/LAB3/src /home/kamil/ANRO/LAB3/build /home/kamil/ANRO/LAB3/build /home/kamil/ANRO/LAB3/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 
