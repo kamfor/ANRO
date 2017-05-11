@@ -29,9 +29,9 @@ int main(int argc,char *argv[])
 	double roll, pitch, yaw; // Szukane parametry
 
 	// Dodanie segmentów - węzłów
-	chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::RotZ),KDL::Frame::DH(0, 0, d1, 0)));
-	chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::RotY),KDL::Frame::DH(0, PI/2, d2, PI/2)));
-	chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::RotX),KDL::Frame::DH(0, PI/2, d3, PI/2)));
+	chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::TransZ),KDL::Frame::DH(0, 0, d1, 0)));
+	chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::TransY),KDL::Frame::DH(0, PI/2, d2, PI/2)));
+	chain.addSegment(KDL::Segment(KDL::Joint(KDL::Joint::TransX),KDL::Frame::DH(0, PI/2, d3, PI/2)));
 	
 	
 	for (int i = 0; i < 3; i++)
