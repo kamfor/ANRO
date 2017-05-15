@@ -7,7 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/kforysze/ANRO/LAB4/devel:$CMAKE_PREFIX_PATH"
-export PWD="/home/kforysze/ANRO/LAB4/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/kforysze/ANRO/LAB4/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/kforysze/ANRO/LAB4/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/kamil/ANRO/LAB4/devel:$CMAKE_PREFIX_PATH"
+export PWD="/home/kamil/ANRO/LAB4/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/kamil/ANRO/LAB4/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/kamil/ANRO/LAB4/src:$ROS_PACKAGE_PATH"

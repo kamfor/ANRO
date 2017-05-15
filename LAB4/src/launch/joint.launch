@@ -9,5 +9,6 @@
 	<param name="d3" value="3" />
 
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<node name="jint" pkg="lab4" type="jint" />
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find lab4)/urdf.rviz" required="true" />
 </launch>

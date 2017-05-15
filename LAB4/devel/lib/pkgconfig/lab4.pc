@@ -1,8 +1,8 @@
-prefix=/home/kforysze/ANRO/LAB4/devel
+prefix=/home/kamil/ANRO/LAB4/devel
 
 Name: lab4
 Description: Description of lab4
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/kforysze/ANRO/LAB4/devel/lib 
+Libs: -L/home/kamil/ANRO/LAB4/devel/lib 
 Requires: 

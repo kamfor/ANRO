@@ -22,17 +22,19 @@ void sigintHandler(int) {
 int main(int argc, char **argv){
 	
 	double x,y,z,t;
+	double ox, oy, oz; 
+	double dx, dy, dz; 
 	
 	ros::init(argc, argv, "jint");
 	ros::NodeHandle s; 
-	ros::Rate loop_rate(30);
+	ros::Rate loop_rate(10);
 	ros::Publisher pub = s.advertise<geometry_msgs::PoseStamped>("kdl_pose",1);
 	ros::Publisher joint = s.advertise<sensor_msgs::JointState>("joint_states",1);  
 
 	double d1,d2,d3;
 
 	s.param<double>("d1",d1,3);
-    s.param<double>("d2",d2,3);
+    	s.param<double>("d2",d2,3);
 	s.param<double>("d3",d3,3);
 
 	sensor_msgs::JointState robotState; 
@@ -45,27 +47,49 @@ int main(int argc, char **argv){
 	d1 = 3;
 	d2 = 3;
 	d3 = 3;
+	ox=0; 
+	oy=0; 
+	oz=0; 
+
+	robotState.header.stamp = ros::Time::now(); 	
+	robotState.position[0] = ox;
+	robotState.position[1] = oy;
+	robotState.position[2] = oz;
+	joint.publish(robotState); 
 	
 	while(ros::ok()|| !exitFlag){
+
 		
-		std::cout<<"enter position and move time x y z t"<<std::endl;  
+		ROS_INFO("enter position and move time x y z t");  
 		std::cin>>x>>y>>z>>t;
 		if(x>d1 || x<0 || y>d2 || y<0 || z>d3 || z<0 || t<0)
 		{
-			std::cout<<"one of parameters is out of limits, enter again"<<std::endl;
+			ROS_INFO("one of parameters is out of limits, enter again");
 			continue;
 		}
 		else
-			std::cout<<"entered data: "<<x<<" "<<y<<" "<<z<<" "<<t<<std::endl; 
-		
+			ROS_INFO("entered data: x=%f, y=%f, z=%f, t=%f",x,y,z,t); 
 
-		robotState.header.stamp = ros::Time::now(); 
+
+		dx = (x-ox)/(10*t); 
+		dy = (y-oy)/(10*t); 
+		dz = (z-oz)/(10*t); 
+
+		for(int i=0; i<(int)10*t; i++){
+			robotState.header.stamp = ros::Time::now(); 
 		
-		robotState.position[0] = x;
-		robotState.position[1] = y;
-		robotState.position[2] = z;
+			robotState.position[0] +=dx;
+			robotState.position[1] +=dy;
+			robotState.position[2] +=dz;
+
+			joint.publish(robotState); 
+			loop_rate.sleep();
+		}
 		
-		joint.publish(robotState); 
+		ox = robotState.position[0]; 
+		oy = robotState.position[1];
+		oz = robotState.position[2];
+
 		loop_rate.sleep();
 	}
 	

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kforysze/ANRO/LAB4/src
+CMAKE_SOURCE_DIR = /home/kamil/ANRO/LAB4/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kforysze/ANRO/LAB4/build
+CMAKE_BINARY_DIR = /home/kamil/ANRO/LAB4/build
 
 # Utility rule file for rosgraph_msgs_generate_messages_py.
 
@@ -67,6 +67,6 @@ CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
 .PHONY : CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 
 CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend:
-	cd /home/kforysze/ANRO/LAB4/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kforysze/ANRO/LAB4/src /home/kforysze/ANRO/LAB4/src /home/kforysze/ANRO/LAB4/build /home/kforysze/ANRO/LAB4/build /home/kforysze/ANRO/LAB4/build/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kamil/ANRO/LAB4/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kamil/ANRO/LAB4/src /home/kamil/ANRO/LAB4/src /home/kamil/ANRO/LAB4/build /home/kamil/ANRO/LAB4/build /home/kamil/ANRO/LAB4/build/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
 

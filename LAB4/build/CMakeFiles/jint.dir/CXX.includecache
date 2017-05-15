@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/kforysze/ANRO/LAB4/src/src/jint.cpp
+/home/kamil/ANRO/LAB4/src/src/jint.cpp
 ros/ros.h
 -
 geometry_msgs/PoseStamped.h
