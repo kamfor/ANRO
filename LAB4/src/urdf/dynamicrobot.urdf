@@ -3,7 +3,16 @@
 		<visual>
 		<origin xyz="0 0 1.5" rpy="0 0 0" />
 			<geometry>
-				<cylinder length="3" radius="0.1"/>
+				<box size="0.3 0.3 3.25"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="link0">
+		<visual>
+		<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<box size="0.32 0.32 0.32"/>
 			</geometry>
 		</visual>
 	</link>
@@ -12,31 +21,38 @@
 		<visual>
 		<origin xyz="0 0 1.5" rpy="0 0 0" />
 			<geometry>
-				<cylinder length="3" radius="0.1"/>
+				<box size="0.25 0.25 3.2"/>
 			</geometry>
 		</visual>
 	</link>
 
 	<link name="link2">
 		<visual>
-		<origin xyz="0 0 1.5" rpy="0 0 0" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<cylinder length="3" radius="0.1"/>
+				<box size="0.28 0.28 0.28"/>
 			</geometry>
 		</visual>
 	</link>
 
 	<link name="link3">
 		<visual>
+		<origin xyz="0 0 1.5" rpy="0 0 0" />
 			<geometry>
-				<box size="0.5 0.5 0.5"/>
+				<box size="0.2 0.2 3"/>
 			</geometry>
 		</visual>
 	</link>
 
+	<joint name="joint0" type="fixed">
+		<parent link="link0"/>
+		<child link="link1"/>
+	</joint>
+
+
 	<joint name="joint1" type="prismatic">
 		<parent link="base_link"/>
-		<child link="link1"/>
+		<child link="link0"/>
 		<axis xyz="1 0 0" rpy="0 0 0" />
 		<origin xyz="0 0 0" rpy="-1.5708 -1.5708 0 " />
 		<limit effort="30" velocity="1.0" lower="0" upper="3" />
@@ -47,14 +63,14 @@
 		<child link="link2"/>
 		<axis xyz="1 0 0" rpy="0 0 0" />
 		<origin xyz="0 0 0" rpy="-1.5708 -1.5708 0 " />
-		<limit effort="30" velocity="1.0" lower="0" upper="3" />
+		<limit effort="30" velocity="1.0" lower="0.3" upper="3" />
 	</joint>
 
 	<joint name="joint3" type="prismatic">
 		<parent link="link2"/>
 		<child link="link3"/>
 		<axis xyz="0 0 1" rpy="0 0 0" />
-		<origin xyz="0 0 0" rpy="0 0 0" />
+		<origin xyz="0 0 -3" rpy="0 0 0" />
 		<limit effort="30" velocity="1.0" lower="0" upper="3" />
 	</joint>
 </robot>
