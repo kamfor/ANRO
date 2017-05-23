@@ -25,6 +25,8 @@ kdl/frames.hpp
 -
 csignal
 -
+cstring
+-
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

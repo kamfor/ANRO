@@ -115,6 +115,10 @@ file(INSTALL DESTINATION "/home/kamil/ANRO/LAB4/install" TYPE FILE FILES "/home/
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab4/srv" TYPE FILE FILES "/home/kamil/ANRO/LAB4/src/srv/jint_control_srv.srv")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kamil/ANRO/LAB4/build/catkin_generated/installspace/lab4.pc")
 endif()
 

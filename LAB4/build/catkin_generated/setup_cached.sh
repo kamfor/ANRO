@@ -8,6 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/kamil/ANRO/LAB4/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/kamil/ANRO/LAB4/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/kamil/ANRO/LAB4/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/kamil/ANRO/LAB4/build"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/kamil/ANRO/LAB4/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/kamil/ANRO/LAB4/src:$ROS_PACKAGE_PATH"
