@@ -10,3 +10,6 @@
 * [Lab3 - kinematyka prosta](https://github.com/kamfor/ANRO/wiki/Labolatorium_3)
 
 * [Lab4 - interpolacja ruchu](https://github.com/kamfor/ANRO/wiki/Labolatorium_4)
+
+
+* [Lab5 - interpolacja ruchu](https://github.com/kamfor/ANRO/wiki/Labolatorium_5)
