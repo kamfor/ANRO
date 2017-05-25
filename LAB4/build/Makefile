@@ -166,6 +166,84 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named lab4_genpy
+
+# Build rule for target.
+lab4_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_genpy
+.PHONY : lab4_genpy
+
+# fast build rule for target.
+lab4_genpy/fast:
+	$(MAKE) -f CMakeFiles/lab4_genpy.dir/build.make CMakeFiles/lab4_genpy.dir/build
+.PHONY : lab4_genpy/fast
+
+#=============================================================================
+# Target rules for targets named jcmd
+
+# Build rule for target.
+jcmd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jcmd
+.PHONY : jcmd
+
+# fast build rule for target.
+jcmd/fast:
+	$(MAKE) -f CMakeFiles/jcmd.dir/build.make CMakeFiles/jcmd.dir/build
+.PHONY : jcmd/fast
+
+#=============================================================================
+# Target rules for targets named lab4_generate_messages_py
+
+# Build rule for target.
+lab4_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_generate_messages_py
+.PHONY : lab4_generate_messages_py
+
+# fast build rule for target.
+lab4_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/lab4_generate_messages_py.dir/build.make CMakeFiles/lab4_generate_messages_py.dir/build
+.PHONY : lab4_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named lab4_generate_messages_lisp
+
+# Build rule for target.
+lab4_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_generate_messages_lisp
+.PHONY : lab4_generate_messages_lisp
+
+# fast build rule for target.
+lab4_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/lab4_generate_messages_lisp.dir/build.make CMakeFiles/lab4_generate_messages_lisp.dir/build
+.PHONY : lab4_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named lab4_geneus
+
+# Build rule for target.
+lab4_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_geneus
+.PHONY : lab4_geneus
+
+# fast build rule for target.
+lab4_geneus/fast:
+	$(MAKE) -f CMakeFiles/lab4_geneus.dir/build.make CMakeFiles/lab4_geneus.dir/build
+.PHONY : lab4_geneus/fast
+
+#=============================================================================
+# Target rules for targets named lab4_generate_messages_cpp
+
+# Build rule for target.
+lab4_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_generate_messages_cpp
+.PHONY : lab4_generate_messages_cpp
+
+# fast build rule for target.
+lab4_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/lab4_generate_messages_cpp.dir/build.make CMakeFiles/lab4_generate_messages_cpp.dir/build
+.PHONY : lab4_generate_messages_cpp/fast
+
+#=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -309,6 +387,19 @@ tf_generate_messages_eus/fast:
 .PHONY : tf_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named lab4_generate_messages
+
+# Build rule for target.
+lab4_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_generate_messages
+.PHONY : lab4_generate_messages
+
+# fast build rule for target.
+lab4_generate_messages/fast:
+	$(MAKE) -f CMakeFiles/lab4_generate_messages.dir/build.make CMakeFiles/lab4_generate_messages.dir/build
+.PHONY : lab4_generate_messages/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -372,6 +463,32 @@ std_msgs_generate_messages_lisp: cmake_check_build_system
 std_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named lab4_gennodejs
+
+# Build rule for target.
+lab4_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_gennodejs
+.PHONY : lab4_gennodejs
+
+# fast build rule for target.
+lab4_gennodejs/fast:
+	$(MAKE) -f CMakeFiles/lab4_gennodejs.dir/build.make CMakeFiles/lab4_gennodejs.dir/build
+.PHONY : lab4_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named lab4_gencpp
+
+# Build rule for target.
+lab4_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_gencpp
+.PHONY : lab4_gencpp
+
+# fast build rule for target.
+lab4_gencpp/fast:
+	$(MAKE) -f CMakeFiles/lab4_gencpp.dir/build.make CMakeFiles/lab4_gencpp.dir/build
+.PHONY : lab4_gencpp/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_lisp
@@ -439,6 +556,19 @@ actionlib_msgs_generate_messages_py/fast:
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named _lab4_generate_messages_check_deps_jint_control_srv
+
+# Build rule for target.
+_lab4_generate_messages_check_deps_jint_control_srv: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _lab4_generate_messages_check_deps_jint_control_srv
+.PHONY : _lab4_generate_messages_check_deps_jint_control_srv
+
+# fast build rule for target.
+_lab4_generate_messages_check_deps_jint_control_srv/fast:
+	$(MAKE) -f CMakeFiles/_lab4_generate_messages_check_deps_jint_control_srv.dir/build.make CMakeFiles/_lab4_generate_messages_check_deps_jint_control_srv.dir/build
+.PHONY : _lab4_generate_messages_check_deps_jint_control_srv/fast
+
+#=============================================================================
 # Target rules for targets named clean_test_results
 
 # Build rule for target.
@@ -450,6 +580,19 @@ clean_test_results: cmake_check_build_system
 clean_test_results/fast:
 	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
 .PHONY : clean_test_results/fast
+
+#=============================================================================
+# Target rules for targets named lab4_genlisp
+
+# Build rule for target.
+lab4_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_genlisp
+.PHONY : lab4_genlisp
+
+# fast build rule for target.
+lab4_genlisp/fast:
+	$(MAKE) -f CMakeFiles/lab4_genlisp.dir/build.make CMakeFiles/lab4_genlisp.dir/build
+.PHONY : lab4_genlisp/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_nodejs
@@ -515,6 +658,19 @@ actionlib_generate_messages_eus: cmake_check_build_system
 actionlib_generate_messages_eus/fast:
 	$(MAKE) -f CMakeFiles/actionlib_generate_messages_eus.dir/build.make CMakeFiles/actionlib_generate_messages_eus.dir/build
 .PHONY : actionlib_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named lab4_generate_messages_nodejs
+
+# Build rule for target.
+lab4_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_generate_messages_nodejs
+.PHONY : lab4_generate_messages_nodejs
+
+# fast build rule for target.
+lab4_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/lab4_generate_messages_nodejs.dir/build.make CMakeFiles/lab4_generate_messages_nodejs.dir/build
+.PHONY : lab4_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named download_extra_data
@@ -725,6 +881,19 @@ actionlib_msgs_generate_messages_nodejs/fast:
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named lab4_generate_messages_eus
+
+# Build rule for target.
+lab4_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab4_generate_messages_eus
+.PHONY : lab4_generate_messages_eus
+
+# fast build rule for target.
+lab4_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/lab4_generate_messages_eus.dir/build.make CMakeFiles/lab4_generate_messages_eus.dir/build
+.PHONY : lab4_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -854,6 +1023,33 @@ gtest_main/fast:
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+src/jcmd.o: src/jcmd.cpp.o
+
+.PHONY : src/jcmd.o
+
+# target to build an object file
+src/jcmd.cpp.o:
+	$(MAKE) -f CMakeFiles/jcmd.dir/build.make CMakeFiles/jcmd.dir/src/jcmd.cpp.o
+.PHONY : src/jcmd.cpp.o
+
+src/jcmd.i: src/jcmd.cpp.i
+
+.PHONY : src/jcmd.i
+
+# target to preprocess a source file
+src/jcmd.cpp.i:
+	$(MAKE) -f CMakeFiles/jcmd.dir/build.make CMakeFiles/jcmd.dir/src/jcmd.cpp.i
+.PHONY : src/jcmd.cpp.i
+
+src/jcmd.s: src/jcmd.cpp.s
+
+.PHONY : src/jcmd.s
+
+# target to generate assembly for a file
+src/jcmd.cpp.s:
+	$(MAKE) -f CMakeFiles/jcmd.dir/build.make CMakeFiles/jcmd.dir/src/jcmd.cpp.s
+.PHONY : src/jcmd.cpp.s
+
 src/jint.o: src/jint.cpp.o
 
 .PHONY : src/jint.o
@@ -890,6 +1086,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... lab4_genpy"
+	@echo "... jcmd"
+	@echo "... lab4_generate_messages_py"
+	@echo "... lab4_generate_messages_lisp"
+	@echo "... lab4_geneus"
+	@echo "... lab4_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_eus"
@@ -902,24 +1104,30 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rebuild_cache"
 	@echo "... tf_generate_messages_eus"
+	@echo "... lab4_generate_messages"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... run_tests"
 	@echo "... install"
 	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... lab4_gennodejs"
+	@echo "... lab4_gencpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... list_install_components"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... _lab4_generate_messages_check_deps_jint_control_srv"
 	@echo "... clean_test_results"
+	@echo "... lab4_genlisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... doxygen"
 	@echo "... tf_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_eus"
+	@echo "... lab4_generate_messages_nodejs"
 	@echo "... download_extra_data"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
@@ -937,6 +1145,7 @@ help:
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... lab4_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_eus"
@@ -947,6 +1156,9 @@ help:
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... src/jcmd.o"
+	@echo "... src/jcmd.i"
+	@echo "... src/jcmd.s"
 	@echo "... src/jint.o"
 	@echo "... src/jint.i"
 	@echo "... src/jint.s"

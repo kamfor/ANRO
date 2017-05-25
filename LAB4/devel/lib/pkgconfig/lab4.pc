@@ -3,6 +3,6 @@ prefix=/home/kamil/ANRO/LAB4/devel
 Name: lab4
 Description: Description of lab4
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/kamil/ANRO/LAB4/devel/include
 Libs: -L/home/kamil/ANRO/LAB4/devel/lib 
-Requires: 
+Requires: roscpp std_msgs message_runtime

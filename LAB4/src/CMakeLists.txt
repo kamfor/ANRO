@@ -71,10 +71,10 @@ add_service_files(DIRECTORY srv
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   sensor_msgs#   std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -105,12 +105,12 @@ add_service_files(DIRECTORY srv
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES myrobot
-#  CATKIN_DEPENDS roscpp sensor_msgs std_msgs tf
-#  DEPENDS system_lib
-)
+#catkin_package(
+  #INCLUDE_DIRS include
+  #LIBRARIES lab4
+  #CATKIN_DEPENDS roscpp std_msgs message_runtime
+  #DEPENDS system_lib
+#)
 
 ###########
 ## Build ##
@@ -204,5 +204,13 @@ include_directories(
 include_directories(include ${catkin_INCLUDE_DIRS})
 add_executable(jint src/jint.cpp)
 target_link_libraries(jint ${catkin_LIBRARIES})
+add_executable(jcmd src/jcmd.cpp)
+target_link_libraries(jcmd ${catkin_LIBRARIES})
+
+add_dependencies(jint ${catkin_EXPORTED_TARGETS})
+add_dependencies(jint ${${PROJECT_NAME}_EXPORTED_TARGETS})
+
+add_dependencies(jcmd ${catkin_EXPORTED_TARGETS})
+add_dependencies(jcmd ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
 

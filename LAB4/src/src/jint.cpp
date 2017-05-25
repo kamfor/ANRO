@@ -1,127 +1,194 @@
 #include <ros/ros.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <sensor_msgs/JointState.h>
+#include <nav_msgs/Path.h>
 #include <visualization_msgs/Marker.h>
+#include "lab4/jint_control_srv.h"
 #include <math.h>
 #include <kdl/chain.hpp>
+#include <iostream>
 #include <kdl/chainfksolverpos_recursive.hpp>
 #include <kdl/frames.hpp>
 #include <csignal>
 #include <cstring>
 
-using namespace std;
-using namespace KDL;
+
+#define LOOP_RATE 10
 
 volatile int exitFlag = 0;
+
+using namespace std; 
+
+ros::Publisher joint;
+ros::Publisher pub;
+
+double x,y,z,t;
+double ox, oy, oz; 
+double dx, dy, dz; 
+int steps; 
+string type; 
+
+uint path_no = 0;
+
 
 void sigintHandler(int) {
 	exitFlag = 1;
 }
 
-double calculate_poly(double x,double ox, double ta, double t){
+double calculatePoly(double x,double ox, double ta, double t){
 	
 	double result; 
-	result  = ((-2*(x-ox))/(ta*ta*ta))*(t*t*t) + ((3*(x-ox))/(ta*ta))*(t*t) + ox; 
+	result  = ((-2*(x-ox))/(t*t*t))*(ta*ta*ta) + ((3*(x-ox))/(t*t))*(ta*ta) + ox; 
 	return result; 
 }
+
+
+bool interoplateJoints(lab4::jint_control_srv::Request& request, lab4::jint_control_srv::Response& response){
+
+	  	ROS_INFO("Params: x=%f, y=%f, z=%f, time=%f ", (double)request.x, (double)request.y, (double)request.z, (double)request.time);
+		ROS_INFO("interpolation type: %s", request.type.c_str());
+
+		ros::Rate loop_rate(LOOP_RATE);
+
+		sensor_msgs::JointState robotState; 
+		robotState.name.push_back("joint1");
+		robotState.name.push_back("joint2");
+		robotState.name.push_back("joint3");
+		robotState.position.resize(robotState.name.size());
+
+		geometry_msgs::PoseStamped pose_stamped;
+		pose_stamped.header.frame_id="base_link";
+
+		nav_msgs::Path path;
+		path.header.frame_id="base_link";
+
+
+		if(request.x>3 || request.x<0 || request.y>3 || request.y<0 || request.z>3 || request.z<0){
+			response.status = "Wrong joints";
+			return true;		
+		}
+
+	  	if(request.time <= 0){
+		    response.status = "Wrong time";
+		    return true;
+		}
+
+		x = request.x;
+		y = request.y; 
+		z = request.z;
+		t = request.time; 
+
+		steps = (int)(t*10); 
+
+		if(request.type == "linear"){
+
+			ROS_INFO("linear interpolation started");
+
+			robotState.position[0] = ox; 
+			robotState.position[1] = oy; 
+			robotState.position[2] = oz; 
+
+			for(int i=0; i<steps; i++){
+				robotState.header.stamp = ros::Time::now();
+				path.header.stamp = ros::Time::now(); 
+		
+				robotState.position[0] += (x-ox)/(10.0*t);
+				robotState.position[1] += (y-oy)/(10.0*t);
+				robotState.position[2] += (z-oz)/(10.0*t);
+
+				pose_stamped.header.stamp = ros::Time::now();
+				pose_stamped.pose.position.z = robotState.position[0];
+  				pose_stamped.pose.position.y = robotState.position[1];
+				pose_stamped.pose.position.x = robotState.position[2];
+				path.poses.push_back(pose_stamped);
+
+				joint.publish(robotState);
+				pub.publish(path);
+				loop_rate.sleep();
+			}
+		
+			ox = robotState.position[0]; 
+			oy = robotState.position[1];
+			oz = robotState.position[2];
+
+			response.status = "Sucess";
+
+			ROS_INFO("linear interpolation done");
+
+			return true; 
+
+		}else if(request.type == "poly"){
+
+			ROS_INFO("polynomian interpolation started");
+
+			double dt = t/steps; 
+			double t_act = 0; 
+
+			for(int i=0; i<steps; i++){ 
+				robotState.header.stamp = ros::Time::now();
+				path.header.stamp = ros::Time::now(); 
+		
+				robotState.position[0] =calculatePoly(x, ox, t_act, t);
+				robotState.position[1] =calculatePoly(y, oy, t_act, t);
+				robotState.position[2] =calculatePoly(z, oz, t_act, t);
+				t_act+=dt; 
+
+				pose_stamped.header.stamp = ros::Time::now();
+				pose_stamped.pose.position.z = robotState.position[0];
+  				pose_stamped.pose.position.y = robotState.position[1];
+				pose_stamped.pose.position.x = robotState.position[2];
+				path.poses.push_back(pose_stamped);
+
+
+				joint.publish(robotState); 
+				pub.publish(path);
+				loop_rate.sleep();
+			}
+
+			response.status = "Sucess";
+		
+			ox = robotState.position[0]; 
+			oy = robotState.position[1];
+			oz = robotState.position[2];
+
+			ROS_INFO("polynomian interpolation done");
+
+			return true; 
+		}
+		else{
+
+			response.status = "Wrong type";
+			return true;
+		}
+	
+}
  
-//publishTrajectoryPath
 
 int main(int argc, char **argv){
 	
-	double x,y,z,t;
-	double ox, oy, oz; 
-	double dx, dy, dz; 
-	string type; 
-	
+
 	ros::init(argc, argv, "jint");
 	ros::NodeHandle s; 
-	ros::Rate loop_rate(10);
-	ros::Publisher pub = s.advertise<geometry_msgs::PoseStamped>("kdl_pose",1);
-	ros::Publisher joint = s.advertise<sensor_msgs::JointState>("joint_states",1);  
-
-	double d1,d2,d3;
-
-	s.param<double>("d1",d1,3);
-    	s.param<double>("d2",d2,3);
-	s.param<double>("d3",d3,3);
+	pub = s.advertise<nav_msgs::Path>("path",1);
+	joint = s.advertise<sensor_msgs::JointState>("joint_states",1);  
 
 	sensor_msgs::JointState robotState; 
 	robotState.name.push_back("joint1");
 	robotState.name.push_back("joint2");
 	robotState.name.push_back("joint3");
 	robotState.position.resize(robotState.name.size());
-	
-
-	d1 = 3;
-	d2 = 3;
-	d3 = 3;
-	ox=0; 
-	oy=0; 
-	oz=0; 
-
-	robotState.header.stamp = ros::Time::now(); 	
-	robotState.position[0] = ox;
-	robotState.position[1] = oy;
-	robotState.position[2] = oz;
-	joint.publish(robotState); 
-	
-	while(ros::ok()|| !exitFlag){
-
-		
-		ROS_INFO("enter position and move time and type x y z t");  
-		std::cin>>x>>y>>z>>t>>type;
-		if(x>d1 || x<0 || y>d2 || y<0 || z>d3 || z<0 || t<0)
-		{
-			ROS_INFO("one of parameters is out of limits, enter again");
-			continue;
-		}
-		else
-			ROS_INFO("entered data: x=%f, y=%f, z=%f, t=%f",x,y,z,t); 
+	robotState.header.stamp = ros::Time::now(); 
+	robotState.position[0] = 0;
+	robotState.position[1] = 0;
+	robotState.position[2] = 0;
+	joint.publish(robotState);
 
 
-		if(!type.compare("linear")){
+	ros::ServiceServer service = s.advertiseService("jint_control_srv", interoplateJoints);
 
-			dx = (x-ox)/(10*t); 
-			dy = (y-oy)/(10*t); 
-			dz = (z-oz)/(10*t); 
+	ROS_INFO("READY :)");
 
-			for(int i=0; i<(int)10*t; i++){
-				robotState.header.stamp = ros::Time::now(); 
-		
-				robotState.position[0] +=dx;
-				robotState.position[1] +=dy;
-				robotState.position[2] +=dz;
-
-				joint.publish(robotState); 
-				loop_rate.sleep();
-			}
-		
-			ox = robotState.position[0]; 
-			oy = robotState.position[1];
-			oz = robotState.position[2];
-		}else{
-
-			for(int i=0; i<(int)100*t; i++){ //optimize using dt 
-				robotState.header.stamp = ros::Time::now(); 
-		
-				robotState.position[0] =calculate_poly(x, ox, (double)(i/100), t);
-				robotState.position[1] =calculate_poly(y, oy, (double)(i/100), t);
-				robotState.position[2] =calculate_poly(z, oz, (double)(i/100), t);
-
-				joint.publish(robotState); 
-				loop_rate.sleep();
-			}
-		
-			ox = robotState.position[0]; 
-			oy = robotState.position[1];
-			oz = robotState.position[2];
-		}
-	
-		loop_rate.sleep();
-	}
-	
-	ros::spin();
+	ros::spin();	
 
 	return 0;
 }

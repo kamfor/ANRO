@@ -119,18 +119,31 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kamil/ANRO/LAB4/build/catkin_generated/installspace/lab4.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab4/cmake" TYPE FILE FILES "/home/kamil/ANRO/LAB4/build/catkin_generated/installspace/lab4-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab4/cmake" TYPE FILE FILES
-    "/home/kamil/ANRO/LAB4/build/catkin_generated/installspace/lab4Config.cmake"
-    "/home/kamil/ANRO/LAB4/build/catkin_generated/installspace/lab4Config-version.cmake"
-    )
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/kamil/ANRO/LAB4/devel/include/lab4")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab4" TYPE FILE FILES "/home/kamil/ANRO/LAB4/src/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/kamil/ANRO/LAB4/devel/share/roseus/ros/lab4")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/kamil/ANRO/LAB4/devel/share/common-lisp/ros/lab4")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/kamil/ANRO/LAB4/devel/share/gennodejs/ros/lab4")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/kamil/ANRO/LAB4/devel/lib/python2.7/dist-packages/lab4")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/kamil/ANRO/LAB4/devel/lib/python2.7/dist-packages/lab4")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
