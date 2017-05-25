@@ -44,8 +44,8 @@ int main(int argc, char **argv)
 	pub = s.advertise<geometry_msgs::PoseStamped>("nonkdl_pose",1);
 	ros::Subscriber sub=s.subscribe("joint_states", 100, jointCallback);
 
-    	s.param<double>("d1",d1,3);
-    	s.param<double>("d2",d2,3);
+    s.param<double>("d1",d1,3);
+    s.param<double>("d2",d2,3);
 	s.param<double>("d3",d3,3);
 	
 	ros::spin();

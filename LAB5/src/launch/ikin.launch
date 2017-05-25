@@ -1,0 +1,16 @@
+<launch>
+	<arg name="model" default='$(find lab5)/urdf/dynamicrobot.urdf'/>
+	<arg name="gui" default="True" />
+	<param name="robot_description"  textfile="$(arg model)" />
+	<param name="use_gui" value="$(arg gui)"/>
+
+	<param name="d1" value="3" />
+	<param name="d2" value="3" />
+	<param name="d3" value="3" />
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<node name="oint" pkg="lab5" type="oint" output="screen"/>
+	<node name="ocmd" pkg="lab5" type="ocmd" output="screen"/>
+	<node name="ikin" pkg="lab5" type="ikin" output="screen"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find lab5)/urdf.rviz" required="true" />
+</launch>
