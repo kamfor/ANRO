@@ -1,8 +1,0 @@
-prefix=/home/kforysze/ANRO/LAB2/install
-
-Name: lab2
-Description: Description of lab2
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/kforysze/ANRO/LAB2/install/lib 
-Requires: 

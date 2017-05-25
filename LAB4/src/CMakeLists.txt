@@ -61,6 +61,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(DIRECTORY srv
   FILES
   jint_control_srv.srv
+  oint_control_srv.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -202,15 +203,28 @@ include_directories(
 # catkin_add_nosetests(test)
 
 include_directories(include ${catkin_INCLUDE_DIRS})
+
+
 add_executable(jint src/jint.cpp)
 target_link_libraries(jint ${catkin_LIBRARIES})
+add_executable(oint src/oint.cpp)
+target_link_libraries(oint ${catkin_LIBRARIES})
 add_executable(jcmd src/jcmd.cpp)
 target_link_libraries(jcmd ${catkin_LIBRARIES})
+add_executable(ocmd src/ocmd.cpp)
+target_link_libraries(ocmd ${catkin_LIBRARIES})
 
 add_dependencies(jint ${catkin_EXPORTED_TARGETS})
 add_dependencies(jint ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
+add_dependencies(oint ${catkin_EXPORTED_TARGETS})
+add_dependencies(oint ${${PROJECT_NAME}_EXPORTED_TARGETS})
+
 add_dependencies(jcmd ${catkin_EXPORTED_TARGETS})
 add_dependencies(jcmd ${${PROJECT_NAME}_EXPORTED_TARGETS})
+
+add_dependencies(ocmd ${catkin_EXPORTED_TARGETS})
+add_dependencies(ocmd ${${PROJECT_NAME}_EXPORTED_TARGETS})
+
 
 

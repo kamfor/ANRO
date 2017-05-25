@@ -10,6 +10,7 @@ Panels:
         - /RobotModel1/Links1
         - /TF1
         - /Path1
+        - /Pose1
       Splitter Ratio: 0.5
     Tree Height: 464
   - Class: rviz/Selection
@@ -129,6 +130,21 @@ Visualization Manager:
       Topic: /path
       Unreliable: false
       Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.100000001
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.300000012
+      Head Radius: 0.100000001
+      Name: Pose
+      Shaft Length: 1
+      Shaft Radius: 0.0500000007
+      Shape: Axes
+      Topic: /pose_stamped
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -153,24 +169,24 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 5.2589035
+      Distance: 14.3871689
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.799946427
-        Y: 1.69077814
-        Z: 1.20298028
+        X: 0.0901940614
+        Y: -0.0202582851
+        Z: 0.0897442177
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.725399673
+      Pitch: 0.659796119
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.475406766
+      Yaw: 1.89040482
     Saved: ~
 Window Geometry:
   Displays:
@@ -188,5 +204,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1440
-  X: 269
-  Y: 36
+  X: 399
+  Y: 27

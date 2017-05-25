@@ -1,2 +1,0 @@
-.
--DCATKIN_DEVEL_PREFIX=/home/kamil/ANRO/LAB4/devel -DCMAKE_INSTALL_PREFIX=/home/kamil/ANRO/LAB4/install -G Unix Makefiles

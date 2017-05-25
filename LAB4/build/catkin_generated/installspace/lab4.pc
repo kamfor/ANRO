@@ -1,8 +1,0 @@
-prefix=/home/kamil/ANRO/LAB4/install
-
-Name: lab4
-Description: Description of lab4
-Version: 0.0.0
-Cflags: -I/home/kamil/ANRO/LAB4/install/include
-Libs: -L/home/kamil/ANRO/LAB4/install/lib 
-Requires: roscpp std_msgs message_runtime
