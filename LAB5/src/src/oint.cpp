@@ -14,6 +14,7 @@ double x, y, z, ox, oy, oz, t;
 
 ros::Publisher oint_pub;
 ros::Publisher path_pub;
+nav_msgs::Path path; 
 
 double calculatePoly(double x,double ox, double ta, double t){
   
@@ -35,7 +36,7 @@ bool interpolatePose(lab5::oint_control_srv::Request& request, lab5::oint_contro
     geometry_msgs::PoseStamped pose_stamped;
     oint_pose.header.frame_id="base_link";
 
-    nav_msgs::Path path; 
+    
     path.header.frame_id="base_link";
 
 	if(request.time <= 0){

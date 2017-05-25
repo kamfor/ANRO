@@ -36,9 +36,9 @@ void jointCallback(const geometry_msgs::PoseStamped & msg){
 	robotState.name.push_back("joint3");
 	robotState.position.resize(robotState.name.size());
 	robotState.header.stamp = ros::Time::now(); 
-	robotState.position[0] = msg.pose.position.x;
+	robotState.position[0] = msg.pose.position.z;
 	robotState.position[1] = msg.pose.position.y;
-	robotState.position[2] = msg.pose.position.z;
+	robotState.position[2] = msg.pose.position.x;
 	ROS_INFO("linear interpolation started %f %f %f",msg.pose.position.x, msg.pose.position.y, msg.pose.position.z);
 	joint.publish(robotState);
 }
